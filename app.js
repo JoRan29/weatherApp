@@ -10,21 +10,25 @@ window.addEventListener("load", () => {
     navigator.geolocation.getCurrentPosition((position) => {
       long = position.coords.longitude;
       lat = position.coords.latitude;
+      console.log(position.coords.accuracy);
 
       const proxy = "https://cors-anywhere.herokuapp.com/";
-      const api = `${proxy}https://www.metaweather.com/api/location/search/?lattlong=${lat},${long}`;
+      const api = `${proxy}http://www.7timer.info/bin/api.pl?lon=${long}&lat=${lat}&product=civil&output=json`;
 
-      fetch(api).then(async (response) => {
-        const data = await response.json();
-        console.log(data[0].woeid);
-        let woeid = data[0].woeid;
-        const api2 = `https://www.metaweather.com/api/location/${woeid}/`;
-        console.log(api2);
-        const { title, distance } = data[0];
-
-        //Set DOM elements from API
-        tempDeg.textContent = null;
-      });
+      fetch(api)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+          console.log(data.dataseries[0]);
+          const { temp2m, weather } = data.dataseries[0];
+          // Set DOM elements from api
+          tempDeg.textContent = temp2m;
+          tempDesc.textContent = weather;
+          locTimezone.textContent = `Longitude: ${long}`;
+          locTimezone.innerHTML += ` <br> Latitude: ${lat}`;
+        });
     });
   } else {
     alert("Location information not available :(");

@@ -39,6 +39,11 @@ body {
           align-items: center;
 }
 
+.location img, .temperature img {
+  width: 35%;
+  margin-left: 40%;
+}
+
 .temperature {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
