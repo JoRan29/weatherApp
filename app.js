@@ -23,11 +23,14 @@ window.addEventListener("load", () => {
           console.log(data);
           console.log(data.dataseries[0]);
           const { temp2m, weather } = data.dataseries[0];
+          // Round numbers to 2 dec
+          let long2 = (Math.round(long * 100) / 100).toFixed(2);
+          let lat2 = (Math.round(lat * 100) / 100).toFixed(2);
           // Set DOM elements from api
           tempDeg.textContent = temp2m;
           tempDesc.textContent = weather;
-          locTimezone.textContent = `Longitude: ${long}`;
-          locTimezone.innerHTML += ` <br> Latitude: ${lat}`;
+          locTimezone.textContent = `Longitude: ${long2}`;
+          locTimezone.innerHTML += ` <br> Latitude: ${lat2}`;
         });
     });
   } else {
