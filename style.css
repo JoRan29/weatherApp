@@ -67,10 +67,10 @@ body {
 
 .temperature .degreeSection span {
   margin: 10px;
-  font-size: 30px;
+  font-size: 100px;
 }
 
 .temperature .degreeSection h2 {
-  font-size: 140px;
+  font-size: 10px;
 }
 /*# sourceMappingURL=style.css.map */

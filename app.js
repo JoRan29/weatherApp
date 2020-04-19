@@ -28,7 +28,8 @@ window.addEventListener("load", () => {
           let long2 = (Math.round(long * 100) / 100).toFixed(2);
           let lat2 = (Math.round(lat * 100) / 100).toFixed(2);
           // Set DOM elements from api
-          tempDeg.textContent = temp2m;
+          tempSpan.textContent += temp2m;
+          tempSpan.textContent += "°C";
           tempDesc.textContent = weather.slice(1);
           locTimezone.textContent = `Longitude: ${long2}`;
           locTimezone.innerHTML += ` <br> Latitude: ${lat2}`;
@@ -37,7 +38,10 @@ window.addEventListener("load", () => {
 
           // Change temp to Celsius/F
           tempDeg.addEventListener("click", () => {
-            if (tempSpan.textContent === "°C") {
+            if (
+              tempSpan.textContent === "°C" ||
+              tempSpan.textContent.includes("C")
+            ) {
               tempSpan.textContent = `${Math.floor(far)} °F`;
             } else {
               tempSpan.textContent = `${temp2m} °C`;
