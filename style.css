@@ -108,4 +108,10 @@ body .header .logo {
   padding-top: 3px;
   padding-left: 30px;
 }
+
+#date {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+}
 /*# sourceMappingURL=style.css.map */

@@ -73,11 +73,17 @@ body {
   width: 100%;
   height: 4%;
   color: $accentClr;
-    span {
-      font-weight: 600;
-    }
-    p {
-      padding-top: 3px;
-      padding-left: 30px;
-    }
+  span {
+    font-weight: 600;
+  }
+  p {
+    padding-top: 3px;
+    padding-left: 30px;
+  }
+}
+
+#date {
+  position: absolute;
+  top: 25px;
+  right: 20px;
 }

@@ -53,3 +53,13 @@ window.addEventListener("load", () => {
     alert("Location information not available :(");
   }
 });
+
+// display current time
+let dateSpan = document.getElementById("date");
+
+let date = new Date();
+let day = date.getDate();
+let month = date.getMonth();
+let year = date.getFullYear();
+
+dateSpan.innerHTML += `${day}.${month}.${year}.`;
